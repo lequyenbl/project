@@ -4,9 +4,17 @@ $themeColor-Dark:#b68d4c;
 $theme-font:    verdana, sans-serif;
 
 body {
-  font: $theme-font;
+  font: 100% $theme-font;
   background-color: $themeColor-Light;
   h1, h2 {
       color: $themeColor-Dark
   }
 }
+//Mixins
+@mixin transform($property) {
+  -webkit-transform: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+
+.box { @include transform(rotate(30deg)); }
